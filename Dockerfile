@@ -21,9 +21,11 @@ COPY --from=build-env /build/stewardwriter /app/
 ENV MESSAGE_FULL_PATH "/app/message.json"
 ENV SOCKET_FULL_PATH "./tmp/steward.sock"
 ENV INTERVAL 60
+ENV WATCH_FOLDER ""
 
 CMD ["ash","-c","/app/stewardwriter\
     -messageFullPath=$MESSAGE_FULL_PATH\
     -socketFullPath=$SOCKET_FULL_PATH\
     -interval=$INTERVAL\
+    -watchFolder=$WATCH_FOLDER\
     "]
