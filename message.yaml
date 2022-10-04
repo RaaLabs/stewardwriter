@@ -1,0 +1,16 @@
+---
+- toNodes:
+    - central
+  method: REQCliCommand
+  methodArgs:
+    - "bash"
+    - "-c"
+    - |
+      uname -a && ls -l
+
+  replyMethod: REQToConsole
+  ACKTimeout: 5
+  retries: 3
+  replyACKTimeout: 5
+  replyRetries: 3
+  methodTimeout: 120
